@@ -45,6 +45,13 @@ if [ "$SEVEN_DAYS_TO_DIE_START_MODE" = "2" ]; then
 			echo "Exiting, steamcmd install or update failed: $STEAMCMD_ERROR"
 			exit
 		fi
+		# Installing Illy Server-Fixes
+		if [ ! -f "/steamcmd/7dtd/Mods" ]; then
+			echo "Installing Illy, Server fixes"
+			wget http://illy.bz/fi/7dtd/server_fixes.tar.gz -P /steamcmd/7dtd/
+			tar -xzf /steamcmd/7dtd/server_fixes.tar.gz -C /steamcmd/7dtd/
+			rm /steamcmd/7dtd/server_fixes.tar.gz
+		fi	
 	else
 		echo "7 Days to Die seems to be installed, skipping automatic update.."
 	fi
@@ -68,6 +75,15 @@ else
 			./update_check.sh
 		fi
 	fi
+	
+	# Updating Illy Server-Fixes
+	if [ -f "/steamcmd/7dtd/Mods" ]; then
+	     rm -R /steamcmd/7dtd/Mods
+	fi
+	echo "Getting current version of Illy, Server fixes"
+	wget http://illy.bz/fi/7dtd/server_fixes.tar.gz -P /steamcmd/7dtd/
+	tar -xzf /steamcmd/7dtd/server_fixes.tar.gz -C /steamcmd/7dtd/
+	rm /steamcmd/7dtd/server_fixes.tar.gz
 fi
 
 # Start mode 1 means we only want to update
