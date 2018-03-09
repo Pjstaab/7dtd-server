@@ -20,7 +20,7 @@ USER root
 
 # Create and set the steamcmd folder as a volume
 RUN mkdir -p /steamcmd/7dtd
-VOLUME ["/steamcmd/7dtd"]
+#VOLUME ["/steamcmd/7dtd/server_data"]
 
 # Setup scheduling support
 ADD scheduler_app/ /scheduler_app/
