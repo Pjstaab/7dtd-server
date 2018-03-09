@@ -14,3 +14,7 @@ You can control the startup mode by using ```SEVEN_DAYS_TO_DIE_START_MODE```. Th
 Note that you should also enable telnet and optionally modify the ```SEVEN_DAYS_TO_DIE_TELNET_PORT``` and ```SEVEN_DAYS_TO_DIE_TELNET_PASSWORD``` environment variables accordingly, so the container can properly send the shutdown command to the server when the proper signal has been received (it uses telnet for this).
 
 One additional feature you can enable is fully automatic updates, meaning that once a server update hits Steam, it'll restart the server and trigger the automatic update. You can enable this by setting ```SEVEN_DAYS_TO_DIE_UPDATE_CHECKING``` to ```"1"```.
+
+# Forked from Didstopia 
+Changes:
+1. Added Server Fixes from <a href='https://7dtd.illy.bz/wiki/Server%20fixes'>Illy</a>
