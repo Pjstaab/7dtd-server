@@ -47,6 +47,7 @@ EXPOSE 25002
 EXPOSE 25003
 EXPOSE 8080
 EXPOSE 8081
+EXPOSE 8082
 
 # Setup default environment variables for the server
 ENV SEVEN_DAYS_TO_DIE_SERVER_STARTUP_ARGUMENTS "-configfile=server_data/serverconfig.xml -logfile /dev/stdout -quit -batchmode -nographics -dedicated"
